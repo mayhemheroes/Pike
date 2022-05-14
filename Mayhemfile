@@ -1,0 +1,7 @@
+project: rnshah9/mayhem-pike
+target: pike
+image: ghcr.io/rnshah9/playground:pike
+
+cmds:
+  - cmd: /usr/local/pike/8.1.17/bin/pike @@
+    filepath: /test.pike
