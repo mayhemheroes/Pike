@@ -1,6 +1,6 @@
-project: rnshah9/mayhem-pike
+project: pike
 target: pike
 
 cmds:
-  - cmd: /usr/local/pike/8.1.17/bin/pike @@
+  - cmd: /usr/local/pike/8.1.17/bin/pike /test.pike
     filepath: /test.pike
