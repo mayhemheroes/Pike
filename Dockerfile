@@ -14,5 +14,5 @@ RUN ldd /usr/local/pike/8.1.17/bin/pike | tr -s '[:blank:]' '\n' | grep '^/' | x
 FROM ubuntu:18.04 as package
 
 COPY --from=builder /deps /deps
-COPY --from=builder /usr/local/pike/8.1.17/bin/pike /usr/local/pike/8.1.17/bin/pike
+COPY --from=builder /usr/local/pike /usr/local/pike
 ENV LD_LIBRARY_PATH=/deps
