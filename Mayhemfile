@@ -4,3 +4,5 @@ target: pike
 cmds:
   - cmd: /usr/local/pike/8.1.17/bin/pike /test.pike
     filepath: /test.pike
+    env:
+      DISABLE_SMOKETEST: '1'
