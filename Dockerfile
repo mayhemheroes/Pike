@@ -11,7 +11,7 @@ RUN make install
 RUN mkdir -p /deps
 RUN ldd /usr/local/pike/8.1.17/bin/pike | tr -s '[:blank:]' '\n' | grep '^/' | xargs -I % sh -c 'cp % /deps;'
 
-FROM ubuntu:20.04 as package
+FROM ubuntu:18.04 as package
 
 COPY --from=builder /deps /deps
 COPY --from=builder /usr/local/pike/8.1.17/bin/pike /usr/local/pike/8.1.17/bin/pike
