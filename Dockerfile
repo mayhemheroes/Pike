@@ -5,7 +5,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y pike8.0 autoconf bison lib
 
 ADD . /repo
 WORKDIR /repo
-RUN make -j8
+RUN make
 RUN make CONFIGUREARGS="--prefix=/repo/build" install
 
 FROM ubuntu:18.04 as package
