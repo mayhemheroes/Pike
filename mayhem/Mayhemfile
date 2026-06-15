@@ -1,0 +1,7 @@
+project: Pike
+target: pike
+cmds:
+  - cmd: /mayhem/mayhem/fuzz-prefix/pike/9.1.3/bin/pike @@
+    env:
+      DISABLE_SMOKETEST: '1'
+      LD_LIBRARY_PATH: /mayhem/mayhem/fuzz-prefix/lib:/mayhem/mayhem/fuzz-prefix/pike/9.1.3/lib
