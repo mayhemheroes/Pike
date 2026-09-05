@@ -1,0 +1,12 @@
+FROM --platform=linux/amd64 ubuntu:18.04 as builder
+
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y pike8.0 autoconf bison libgmp-dev nettle-dev make g++
+
+COPY . /repo
+WORKDIR /repo
+RUN make -j8
+RUN make install
+
+FROM ubuntu:18.04 as package
+COPY --from=builder /usr/local/pike/8.1.17/ /usr/local/pike/8.1.17/
